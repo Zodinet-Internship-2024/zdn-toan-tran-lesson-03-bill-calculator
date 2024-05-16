@@ -1,0 +1,85 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./assets/style.css" />
+        <title>Splitter</title>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="splitter-title">SPLI</h2>
+            <h2 class="splitter-title">TTER</h2>
+            <main class="tip-container">
+                <section class="tip-form">
+                    <form class="tip-form__bill">
+                        <label for="bill" class="tip-form__label">Bill</label>
+                        <div class="tip-form__field">
+                            <span>$</span>
+                            <input id="bill" type="number" placeholder="0" autofocus />
+                        </div>
+                    </form>
+                    <div class="tip-select">
+                        <span class="tip-form__label">Select Tip %</span>
+                        <ul class="tip-select__list">
+                            <li class="tip-select__item" data-tip="5">5%</li>
+                            <li class="tip-select__item" data-tip="10">10%</li>
+                            <li class="tip-select__item" data-tip="15">15%</li>
+                            <li class="tip-select__item" data-tip="20">20%</li>
+                            <li class="tip-select__item" data-tip="50">50%</li>
+                            <div class="tip-form__field">
+                                <input type="number" placeholder="Custom" id="customTip" />
+                            </div>
+                        </ul>
+                    </div>
+                    <form class="tip-form__people-number">
+                        <label for="numberOfPeople" class="tip-form__label">
+                            Number of People
+                        </label>
+                        <div class="tip-form__field">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-6 h-6"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                                />
+                            </svg>
+                            <input type="number" id="numberOfPeople" placeholder="0" />
+                        </div>
+                    </form>
+                </section>
+                <section class="tip-info">
+                    <ul class="tip-info__list">
+                        <li class="tip-info__item">
+                            <div class="tip-info__title">
+                                <h3 class="">Tip Amount</h3>
+                                <span>/ person</span>
+                            </div>
+                            <span class="tip-info__amount" id="tipAmount">$0.00</span>
+                        </li>
+                        <li class="tip-info__item">
+                            <div class="tip-info__title">
+                                <h3>Total</h3>
+                                <span>/ person</span>
+                            </div>
+                            <span class="tip-info__amount" id="totalAmount">$0.00</span>
+                        </li>
+                    </ul>
+                    <button class="tip-info__button" id="resetButton">RESET</button>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
