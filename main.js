@@ -3,14 +3,16 @@ import { roundToTwoDecimalPlaces } from './utils/utils.js';
 document.addEventListener('DOMContentLoaded', () => {
     const preventNumberValidInput = () => {
         const inputs = document.querySelectorAll('input[type="number"]');
+        const invalidKeys = ['e', 'E', '-', '+'];
         inputs.forEach((input) => {
             input.addEventListener('keydown', (e) => {
-                if (e.key === 'e' || e.key === '-' || e.key === '+') {
+                if (invalidKeys.includes(e.key)) {
                     e.preventDefault();
                 }
             });
         });
     };
+
     preventNumberValidInput();
 
     const billInput = document.getElementById('bill');
