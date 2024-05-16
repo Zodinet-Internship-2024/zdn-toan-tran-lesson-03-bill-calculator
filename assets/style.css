@@ -32,6 +32,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
 }
 
 ul,
@@ -114,13 +116,13 @@ li {
   align-items: center;
 }
 .container .tip-container .tip-form__error-message {
-  color: red;
-}
-.container .tip-container .tip-form__field--error {
-  border: 2px solid red;
+  color: hsl(0, 100%, 74%);
 }
 .container .tip-container .tip-form__field:focus-within {
   border: 2px solid hsl(172, 67%, 45%);
+}
+.container .tip-container .tip-form div.tip-form__field--error {
+  border: 2px solid hsl(0, 100%, 74%);
 }
 .container .tip-container .tip-form .tip-select__list {
   display: grid;

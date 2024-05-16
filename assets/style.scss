@@ -36,6 +36,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
     -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 ul,
@@ -111,15 +112,15 @@ li {
             }
 
             &__error-message {
-                color: red;
-            }
-
-            &__field--error {
-                border: 2px solid red;
+                color: $danger;
             }
 
             &__field:focus-within {
                 border: 2px solid $primary-color;
+            }
+
+            div.tip-form__field--error {
+                border: 2px solid $danger;
             }
 
             .tip-select__list {
