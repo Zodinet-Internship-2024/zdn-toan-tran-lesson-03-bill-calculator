@@ -19,7 +19,10 @@
             <main class="tip-container">
                 <section class="tip-form">
                     <form class="tip-form__bill">
-                        <label for="bill" class="tip-form__label">Bill</label>
+                        <div class="tip-form__label-container">
+                            <label for="bill" class="tip-form__label">Bill</label>
+                            <span class="tip-form__error-message"></span>
+                        </div>
                         <div class="tip-form__field">
                             <span>$</span>
                             <input id="bill" type="number" placeholder="0" autofocus />
@@ -39,9 +42,12 @@
                         </ul>
                     </div>
                     <form class="tip-form__people-number">
-                        <label for="numberOfPeople" class="tip-form__label">
-                            Number of People
-                        </label>
+                        <div class="tip-form__label-container">
+                            <label for="numberOfPeople" class="tip-form__label">
+                                Number of People
+                            </label>
+                            <span class="tip-form__error-message"></span>
+                        </div>
                         <div class="tip-form__field">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

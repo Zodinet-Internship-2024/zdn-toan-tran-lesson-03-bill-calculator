@@ -108,7 +108,15 @@ li {
   width: 18px;
   height: 18px;
 }
-.container .tip-container .tip-form__field.error {
+.container .tip-container .tip-form__label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .tip-container .tip-form__error-message {
+  color: red;
+}
+.container .tip-container .tip-form__field--error {
   border: 2px solid red;
 }
 .container .tip-container .tip-form__field:focus-within {

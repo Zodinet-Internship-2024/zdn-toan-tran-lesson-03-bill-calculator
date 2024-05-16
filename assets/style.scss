@@ -104,7 +104,17 @@ li {
                 }
             }
 
-            &__field.error {
+            &__label-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &__error-message {
+                color: red;
+            }
+
+            &__field--error {
                 border: 2px solid red;
             }
 
