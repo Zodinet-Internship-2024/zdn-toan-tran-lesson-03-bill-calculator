@@ -13,7 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    const preventPasteInvalidInput = () => {
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach((input) => {
+            input.addEventListener('paste', (e) => {
+                const regex = /^[0-9]*$/;
+                const text = e.clipboardData.getData('text');
+                if (!regex.test(text)) {
+                    e.preventDefault();
+                }
+            });
+        });
+    };
+
     preventNumberValidInput();
+    preventPasteInvalidInput();
 
     const billInput = document.getElementById('bill');
     const tipItems = document.querySelectorAll('.tip-select__item');
