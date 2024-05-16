@@ -1,33 +1,8 @@
-import { roundToTwoDecimalPlaces } from './utils/utils.js';
+import { roundToTwoDecimalPlaces } from '../utils/utils.js';
+import inputValidator from './input-validation.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const preventNumberValidInput = () => {
-        const inputs = document.querySelectorAll('input[type="number"]');
-        const invalidKeys = ['e', 'E', '-', '+'];
-        inputs.forEach((input) => {
-            input.addEventListener('keydown', (e) => {
-                if (invalidKeys.includes(e.key)) {
-                    e.preventDefault();
-                }
-            });
-        });
-    };
-
-    const preventPasteInvalidInput = () => {
-        const inputs = document.querySelectorAll('input[type="number"]');
-        inputs.forEach((input) => {
-            input.addEventListener('paste', (e) => {
-                const regex = /^[0-9]*$/;
-                const text = e.clipboardData.getData('text');
-                if (!regex.test(text)) {
-                    e.preventDefault();
-                }
-            });
-        });
-    };
-
-    preventNumberValidInput();
-    preventPasteInvalidInput();
+    inputValidator.preventNumberInvalidInput().preventPasteInvalidInput();
 
     const billInput = document.getElementById('bill');
     const billErrorMessage = document.getElementById('billErrorMessage');
@@ -96,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             inputElement.parentElement.classList.remove(errorClass);
         }
     };
+
     billInput.onfocus = () => {
         billInput.select();
     };
@@ -123,16 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     resetButton.onclick = () => {
+        resetValue();
+        resetError();
+        removeActiveClassFromTipItems();
+    };
+
+    const resetValue = () => {
         billInput.value = '';
         customTipInput.value = '';
         numberOfPeopleInput.value = '';
         tipAmount.innerHTML = '$0.00';
         totalAmount.innerHTML = '$0.00';
+    };
 
+    const resetError = () => {
         billInput.parentElement.classList.remove(errorClass);
         billErrorMessage.innerHTML = '';
         numberOfPeopleInput.parentElement.classList.remove(errorClass);
         peopleNumberErrorMessage.innerHTML = '';
-        removeActiveClassFromTipItems();
     };
 });
