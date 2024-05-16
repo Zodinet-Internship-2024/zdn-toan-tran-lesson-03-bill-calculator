@@ -80,6 +80,7 @@ li {
   background: hsl(189, 41%, 97%);
   border-radius: 8px;
   gap: 4px;
+  height: 44px;
   padding: 8px 12px;
   align-items: center;
 }
@@ -171,7 +172,8 @@ li {
 }
 .container .tip-container .tip-info__amount {
   display: inline-block;
-  width: 80px;
+  width: 120px;
+  text-align: right;
   text-overflow: ellipsis;
   overflow: hidden;
   color: hsl(172, 67%, 45%);

@@ -85,6 +85,7 @@ li {
                 background: $very-light-grayish-cyan;
                 border-radius: 8px;
                 gap: 4px;
+                height: $input-height;
                 padding: 8px 12px;
                 align-items: center;
 
@@ -176,7 +177,8 @@ li {
 
             &__amount {
                 display: inline-block;
-                width: 80px;
+                width: $amount-width;
+                text-align: right;
                 text-overflow: ellipsis;
                 overflow: hidden;
                 color: $primary-color;
