@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     preventPasteInvalidInput();
 
     const billInput = document.getElementById('bill');
+    const billErrorMessage = document.getElementById('billErrorMessage');
+    const peopleNumberErrorMessage = document.getElementById('peopleNumberErrorMessage');
     const tipItems = document.querySelectorAll('.tip-select__item');
     const customTipInput = document.getElementById('customTip');
     const numberOfPeopleInput = document.getElementById('numberOfPeople');
@@ -81,15 +83,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const errorClass = 'tip-form__field--error';
+    const handleShowError = (inputElement, errorElement) => {
+        if (inputElement.value === '0') {
+            errorElement.innerHTML = "Can't be zero";
+            inputElement.parentElement.classList.add(errorClass);
+        } else if (!inputElement.value) {
+            errorElement.innerHTML = "Can't be empty";
+            inputElement.parentElement.classList.add(errorClass);
+        } else {
+            errorElement.innerHTML = '';
+            inputElement.parentElement.classList.remove(errorClass);
+        }
+    };
     billInput.onfocus = () => {
         billInput.select();
     };
-    billInput.oninput = calculateTip;
+    billInput.oninput = () => {
+        handleShowError(billInput, billErrorMessage);
+        calculateTip();
+    };
 
     numberOfPeopleInput.onfocus = () => {
         numberOfPeopleInput.select();
     };
-    numberOfPeopleInput.oninput = calculateTip;
+    numberOfPeopleInput.oninput = () => {
+        handleShowError(numberOfPeopleInput, peopleNumberErrorMessage);
+        calculateTip();
+    };
 
     customTipInput.onfocus = () => {
         removeActiveClassFromTipItems();
@@ -107,6 +128,11 @@ document.addEventListener('DOMContentLoaded', () => {
         numberOfPeopleInput.value = '';
         tipAmount.innerHTML = '$0.00';
         totalAmount.innerHTML = '$0.00';
+
+        billInput.parentElement.classList.remove(errorClass);
+        billErrorMessage.innerHTML = '';
+        numberOfPeopleInput.parentElement.classList.remove(errorClass);
+        peopleNumberErrorMessage.innerHTML = '';
         removeActiveClassFromTipItems();
     };
 });
