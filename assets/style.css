@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(172, 67%, 45%);
+}
+
+input {
+  font-size: 24px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.container .splitter-title {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 12px;
+}
+.container .tip-container {
+  display: grid;
+  margin-top: 40px;
+  background-color: hsl(0, 0%, 100%);
+  grid-template-columns: 1fr 1fr;
+  place-content: center;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  padding: 28px;
+  gap: 28px;
+}
+@media (max-width: 767px) {
+  .container .tip-container {
+    grid-template-columns: 1fr;
+  }
+}
+.container .tip-container .tip-form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+.container .tip-container .tip-form__label {
+  color: hsl(186, 14%, 43%);
+}
+.container .tip-container .tip-form__bill {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.container .tip-container .tip-form__field {
+  display: flex;
+  background: hsl(189, 41%, 97%);
+  border-radius: 8px;
+  gap: 4px;
+  padding: 8px 12px;
+  align-items: center;
+}
+.container .tip-container .tip-form__field span {
+  color: hsl(184, 14%, 56%);
+}
+.container .tip-container .tip-form__field input {
+  flex-grow: 1;
+  font-size: 24px;
+  color: hsl(183, 100%, 15%);
+  font-weight: bold;
+  width: 100%;
+  background: hsl(189, 41%, 97%);
+  border: none;
+  outline: none;
+  text-align: right;
+}
+.container .tip-container .tip-form__field input::-moz-placeholder {
+  color: hsl(184, 14%, 56%);
+}
+.container .tip-container .tip-form__field input::placeholder {
+  color: hsl(184, 14%, 56%);
+}
+.container .tip-container .tip-form__field svg {
+  width: 18px;
+  height: 18px;
+}
+.container .tip-container .tip-form__field.error {
+  border: 2px solid red;
+}
+.container .tip-container .tip-form__field:focus-within {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.container .tip-container .tip-form .tip-select__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}
+@media (max-width: 767px) {
+  .container .tip-container .tip-form .tip-select__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.container .tip-container .tip-form .tip-select__list li {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(183, 100%, 15%);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+.container .tip-container .tip-form .tip-select__list li:hover {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+.container .tip-container .tip-form .tip-select__list li.active {
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(172, 67%, 45%);
+}
+.container .tip-container .tip-form .tip-select__list .tip-form__field {
+  height: 40px;
+}
+.container .tip-container .tip-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: hsl(183, 100%, 15%);
+  border-radius: 16px;
+  padding: 24px;
+}
+.container .tip-container .tip-info__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.container .tip-container .tip-info__title h3 {
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+}
+.container .tip-container .tip-info__title span {
+  color: hsl(184, 14%, 56%);
+  font-size: 14px;
+}
+.container .tip-container .tip-info__amount {
+  display: inline-block;
+  width: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: hsl(172, 67%, 45%);
+  font-size: 24px;
+}
+.container .tip-container .tip-info__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .tip-container .tip-info__button {
+  cursor: pointer;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 100%;
+  color: hsl(183, 100%, 15%);
+  background: hsl(172, 67%, 45%);
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+}
+.container .tip-container .tip-info__button.disable {
+  opacity: 60%;
+  cursor: not-allowed;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,14 @@
+@mixin input-styles {
+    font-size: $form-input-size;
+    color: $very-dark-cyan;
+    font-weight: bold;
+    width: 100%;
+    background: $very-light-grayish-cyan;
+    border: none;
+    outline: none;
+    text-align: right;
+
+    &::placeholder {
+        color: $grayish-cyan;
+    }
+}
